@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
+	<head>
 	<meta name="viewport" content="width=320; user-scalable=no" />
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>ColorThief Demo</title>
@@ -46,9 +46,8 @@
 		
     <script>
 	var desiredWidth;
-	document.addEventListener("DOMContentLoaded", onReady, true);
 
-	function onReady() {
+    $(document).ready(function() {
         console.log('onReady');
 		$("#takePictureField").on("change",gotPic);
 		$("#yourimage").load(getSwatches);
@@ -58,7 +57,7 @@
             window.URL = window.webkitURL;   
         }
 		
-	} 
+	});
 
 	function getSwatches(){
 		var colorArr = createPalette($("#yourimage"), 5);
@@ -75,6 +74,8 @@
             $("#yourimage").attr("src",URL.createObjectURL(event.target.files[0]));
         }
 	}
+	
+	
         
     </script>    
 	</body>
